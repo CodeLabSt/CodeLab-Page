@@ -1,16 +1,13 @@
 import styled from 'styled-components';
 
 export const Section = styled.section`
+  width: 100vw;
+  min-heigth: 100vh;
+  heigth: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin: 0;
-  width: 100%;
-  height: 900px;
-  text-align: center;
-  /* background: red; */
 `;
 
 export const FlechaContainer = styled.div`
@@ -66,4 +63,15 @@ export const InfoParrafo = styled.p`
   font-size: 22px;
   margin: 10px 0;
   color: black;
+`;
+
+export const Slider = styled.div`
+  width: 70%;
+  heigth: 100%;
+  min-height: 20vh;
+  display: flex;
+  justifi-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background: black;
 `;
