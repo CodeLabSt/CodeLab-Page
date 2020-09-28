@@ -16,8 +16,8 @@ import {
 export const CaracteristicasDiseño = ({ flag }) => {
   return (
     <Section bandera={flag ? true : false}>
-      <Title>Caractetisticas</Title>
-      <Container>
+      <Title bandera={flag ? true : false}>Caractetisticas</Title>
+      <Container bandera={flag ? true : false}>
         {/* Primero */}
         <InfoContainer>
           <IconContainer>

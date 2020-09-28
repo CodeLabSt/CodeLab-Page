@@ -1,6 +1,9 @@
-import styled, { css } from 'styled-components';
+import styled, { css,keyframes } from 'styled-components';
+import {zoomInDown,slideInLeft,slideInRight} from 'react-animations';
 
-// Verde:#3fff7c , Azul:#3ffbe0 , gris:#cfbebb
+const ZommIn = keyframes`${zoomInDown}`;
+const SlideInLeft = keyframes`${slideInLeft}`;
+const SlideInRight = keyframes`${slideInRight}`;
 
 export const Section = styled.section`
   width: 100%;
@@ -21,8 +24,12 @@ export const FirtsContainer = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  /* background: yellow; */
   text-align: center;
+  ${(props) => 
+    props.flag &&
+    css`
+      animation:1s ${SlideInLeft};
+    `}
 `;
 
 export const SecondContainer = styled.div`
@@ -42,12 +49,19 @@ export const ImgLaptop = styled.img`
   margin: 0;
   position: relative;
   top: -60px;
+  ${(props) => 
+    props.flag &&
+    css`
+      animation: 1s ${ZommIn};
+    `}
 `;
 
 export const Title = styled.h1`
   color: black;
   margin: 0;
-  font-size: 65px;
+  font-size: 70px;
+  position:relative;
+  top:30px;
   /* text-decoration-line: underline; */
   background: linear-gradient(to right, #3fff7c, #3ffbe0) bottom no-repeat;
   background-size: 75% 8px;
@@ -58,6 +72,8 @@ export const Parraf = styled.p`
   font-size: 25px;
   margin: 30px 0;
   color: black;
+  position:relative;
+  top:20px;
 `;
 
 export const InfoContainer = styled.div`
@@ -69,18 +85,23 @@ export const InfoContainer = styled.div`
   width: 40%;
   position: relative;
   top: -60px;
+  ${(props) => 
+    props.flag &&
+    css`
+      animation: 1s ${SlideInRight};
+    `}
 `;
 
 export const Subtitle = styled.h2`
   color: black;
-  font-size: 70px;
-  margin: 0;
+  font-size: 65px;
+  margin:0;
   line-height: 65px;
 `;
 
 export const SubParrafo = styled.p`
   margin: 10px 0;
-  font-size: 30px;
+  font-size: 22px;
   line-height: 30px;
 `;
 
@@ -111,7 +132,7 @@ export const FlechaContainer = styled.div`
   top: -65px;
   z-index: 1;
   cursor: pointer;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.);
 `;
 
 export const ImgFlecha = styled.img`

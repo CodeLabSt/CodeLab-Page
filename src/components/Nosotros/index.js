@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState,useEffect} from 'react';
 import {
   Section,
   FirtsContainer,
@@ -17,73 +17,108 @@ import PabloVilla from '../../images/PabloVilla.jpg';
 import JorgeVilla from '../../images/JorgeVilla3.jpg';
 import { FaInstagram, FaGithub, FaWhatsapp, FaBehance } from 'react-icons/fa';
 
-export const Nosotros = () => {
+const Nosotros = () => {
+
+  const [showAnimation,setShowAnimation] = useState(false);
+
+  useEffect(
+    function(){
+      const onScroll = (e) => {
+        const newShowAnimation = window.scrollY > 695 && window.scrollY < 1200;
+        showAnimation !== newShowAnimation && setShowAnimation(newShowAnimation);
+      };
+      document.addEventListener('scroll',onScroll);
+      return () => document.removeEventListener('scroll', onScroll);
+    },
+    [showAnimation]
+  );
+    
   return (
     <Section id='nosotros'>
       <FirtsContainer>
-        <FirtsTitle>Nosotros</FirtsTitle>
-        <ParafNosot>
-          Somos un grupo de tres jovenes Venezolanos emprendedores,
+        <FirtsTitle flag={showAnimation}>Nosotros</FirtsTitle>
+        <ParafNosot >
+          Somos un grupo de tres jóvenes Venezolanos emprendedores,
           <br />
-          creativos y responsables, con una vision al futuro del mundo digital.
+          creativos y responsables, con una visión al futuro del mundo digital.
         </ParafNosot>
       </FirtsContainer>
       <SecondContainer>
         {/* Miguel */}
         <Presentacion Image={MiguelVilla}>
-          <InfoContainer>
+          <InfoContainer flag={showAnimation}>
             <Title>
               <i>
                 Miguel <br /> Villamizar
               </i>
             </Title>
-            <Description>
+            <Description flag={showAnimation}>
               Diseñador <br /> Grafico
             </Description>
           </InfoContainer>
-          <ContainerImg>
-            <FaInstagram />
-            <FaBehance />
-            <FaWhatsapp />
+          <ContainerImg flag={showAnimation}>
+            <a href="https://www.instagram.com/miguelvilllamizar/">
+              <FaInstagram/>
+            </a>
+            <a>
+              <FaBehance />
+            </a>
+            <a href="https://wa.link/r3y8sf">
+              <FaWhatsapp />
+            </a>
           </ContainerImg>
         </Presentacion>
         {/* Pablo */}
         <Presentacion Image={PabloVilla}>
-          <InfoContainer>
+          <InfoContainer flag={showAnimation}>
             <Title>
               <i>
                 Pablo <br /> Villamizar
               </i>
             </Title>
-            <Description>
+            <Description flag={showAnimation}>
               Desarrollador <br /> Web
             </Description>
           </InfoContainer>
-          <ContainerImg>
-            <FaInstagram />
-            <FaGithub />
-            <FaWhatsapp />
+          <ContainerImg flag={showAnimation}>
+            <a href="https://www.instagram.com/pablo.m58/">
+              <FaInstagram />
+            </a>
+            <a href="https://github.com/pablom58">
+              <FaGithub />
+            </a>
+            <a href="https://wa.link/l12mfa">
+              <FaWhatsapp />
+            </a>
           </ContainerImg>
         </Presentacion>
         {/* Jorge */}
         <Presentacion Image={JorgeVilla}>
-          <InfoContainer>
+          <InfoContainer flag={showAnimation}>
             <Title>
               <i>
                 Jorge <br /> Villamizar
               </i>
             </Title>
-            <Description>
+            <Description  flag={showAnimation}>
               Desarrollador <br /> Web
             </Description>
           </InfoContainer>
-          <ContainerImg>
-            <FaInstagram />
-            <FaGithub />
-            <FaWhatsapp />
+          <ContainerImg flag={showAnimation}>
+            <a href="https://www.instagram.com/jorgelvillamizar/">
+              <FaInstagram />
+            </a>
+            <a href="https://github.com/Jorgevillamizar10">
+              <FaGithub />
+            </a>
+            <a href="https://wa.link/8f9uud">
+              <FaWhatsapp />
+            </a>
           </ContainerImg>
         </Presentacion>
       </SecondContainer>
     </Section>
   );
 };
+
+export default Nosotros;

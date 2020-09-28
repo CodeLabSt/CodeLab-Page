@@ -10,7 +10,7 @@ import {
 } from './styles';
 import { GiSmartphone } from 'react-icons/gi';
 import { AiOutlineMail } from 'react-icons/ai';
-import { FaInstagram, FaFacebook } from 'react-icons/fa';
+import { FaInstagram, FaFacebook,FaGithub } from 'react-icons/fa';
 
 export const Footer = () => {
   return (
@@ -19,20 +19,18 @@ export const Footer = () => {
       <Container>
         <Title>Sobre CodeLab</Title>
         <Parrafo>
-          Sobre una agencia de marketing digital,
-          <br />
-          especializada en el area de Diseño Web y<br />
-          Diseño Frafico
+          Sobre una agencia de marketing digital, especializada en el área de Diseño Web y Diseño Gráfico.
         </Parrafo>
         <Parrafo>
-          Una agencia con ambito nacional e <br /> internacional
+          Una agencia con ámbito nacional e  <br />
+          internacional.
         </Parrafo>
       </Container>
       {/* Segundo Container */}
       <Container>
         <Title>Nuestros Servicios</Title>
-        <Anchor>Diseño Web</Anchor>
-        <Anchor>Diseño Grafico</Anchor>
+        <Anchor href='#servicios'>Diseño Web</Anchor>
+        <Anchor href='#diseño-grafico'>Diseño Grafico</Anchor>
       </Container>
       {/* Tercer Container */}
       <Container>
@@ -46,8 +44,15 @@ export const Footer = () => {
           codelab.webdesign@gmail.com
         </ContactInfo>
         <ContainerImages>
-          <FaFacebook />
-          <FaInstagram />
+          <a href="https://www.facebook.com/codelab.studio">
+            <FaFacebook />
+          </a>
+          <a href="https://www.instagram.com/codelab.studio/">
+            <FaInstagram />
+          </a>
+          <a href="https://github.com/CodeLabSt">
+            <FaGithub />
+          </a>
         </ContainerImages>
       </Container>
     </Section>

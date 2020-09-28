@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 import {
   Section,
   SecondContainer,
@@ -17,12 +17,26 @@ import Laptop from '../../images/MockupLaptop.png';
 import Flecha from '../../images/Flecha.png';
 import { Caracteristicas } from '../Caracteristicas/index.js';
 
-export const Servicios = () => {
+const Servicios = () => {
   const [click, setClick] = useState(false);
+  const [showAnimation,setShowAnimation] = useState(false);
+
+  useEffect(
+    function(){
+      const onScroll = (e) => {
+        const newShowAnimation = window.scrollY > 1200 && window.scrollY < 2000;
+        showAnimation !== newShowAnimation && setShowAnimation(newShowAnimation);
+      };
+      document.addEventListener('scroll',onScroll);
+      return () => document.removeEventListener('scroll', onScroll);
+    },
+    [showAnimation]
+  );
+
   return (
     <>
       <Section id='servicios'>
-        <FirtsContainer>
+        <FirtsContainer flag={showAnimation}>
           <Title>Servicios</Title>
           <Parraf>
             Te brindamos Asesoramiento detallado sobre los paquetes <br />y
@@ -30,16 +44,16 @@ export const Servicios = () => {
           </Parraf>
         </FirtsContainer>
         <SecondContainer>
-          <ImgLaptop src={Laptop} alt='laptop' />
-          <InfoContainer>
+          <ImgLaptop  flag={showAnimation} src={Laptop} alt='laptop' />
+          <InfoContainer flag={showAnimation}>
             <Subtitle>
               Desarrollo y <br />
               Diseño web
             </Subtitle>
             <SubParrafo>
-              Creamos la pagina web de tus <br /> sueños.El futuro de tu marca{' '}
-              <br />
-              esta en nuestras manos.
+              Creamos la página web de tus <br />
+              sueños. El futuro de tu marca <br />
+              está en nuestras manos.
             </SubParrafo>
             <a href='#contacto'>
               <Button>Aprender mas</Button>
@@ -54,3 +68,5 @@ export const Servicios = () => {
     </>
   );
 };
+
+export default Servicios;

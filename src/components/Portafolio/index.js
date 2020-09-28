@@ -12,7 +12,7 @@ import Easybank from '../../images/Captures Paginas/Easybank1.png';
 import EasyFooter from '../../images/Captures Paginas/Easybank2.png';
 import Shorty from '../../images/Captures Paginas/shorty.png';
 
-export const Portafolio = () => {
+const Portafolio = () => {
   return (
     <Section id='portafolio'>
       <FirtsContainer>
@@ -20,7 +20,7 @@ export const Portafolio = () => {
         <InfoParrafo>
           Nuestro portafolio habla por nosotros, nuestro compromiso
           <br />
-          es crear proyectos de alta calidad
+          es crear proyectos de alta calidad.
         </InfoParrafo>
       </FirtsContainer>
       <SecondContainer>
@@ -35,3 +35,5 @@ export const Portafolio = () => {
     </Section>
   );
 };
+
+export default Portafolio;

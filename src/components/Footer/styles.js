@@ -12,7 +12,7 @@ export const Section = styled.section`
 `;
 
 export const Container = styled.div`
-  width: 20%;
+  width: 25%;
   height: 90%;
   display: flex;
   flex-direction: column;
@@ -22,10 +22,10 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h2`
-  font-size: 35px;
+  font-size: 30px;
   color: black;
-  background: linear-gradient(to right, #3fff7c, #3ffbe0) bottom no-repeat;
-  background-size: 100% 3px;
+  /* background: linear-gradient(to right, #3fff7c, #3ffbe0) bottom no-repeat;
+  background-size: 100% 3px; */
   margin: 15px 0;
 `;
 
@@ -39,6 +39,7 @@ export const Anchor = styled.a`
   color: black;
   margin: 5px 0;
   font-size: 18px;
+  text-decoration:none;
   cursor: pointer;
   &:hover {
     color: #3fff7c;
@@ -57,26 +58,32 @@ export const ContactInfo = styled.div`
   & > svg {
     width: 40px;
     height: 40px;
-    margin: 0 5px;
-    color: #3fff7c;
+    margin-right:10px;
+    /* color: #3fff7c; */
   }
 `;
 
 export const ContainerImages = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: left;
+  align-items: center;
+  justify-content:left;
   width: 100%;
   height: 20%;
   margin: 10px 0;
-  & > svg {
-    width: 40px;
-    height: 40px;
+  & > a{
+    text-decoration:none;
     margin-right: 10px;
-    color: #3fff7c;
+    width: 35px;
+    height: 35px;
+    color:black;
     cursor: pointer;
-    &:hover {
-      color: #3ffbe0;
+    & > svg {
+      width:100%;
+      height:100%;
+      &:hover {
+        color: #3fff7c;
+      }
     }
   }
 `;

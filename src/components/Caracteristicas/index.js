@@ -21,8 +21,8 @@ import {
 export const Caracteristicas = ({ flag }) => {
   return (
     <SectionC bandera={flag ? true : false}>
-      <Title>Caracteristicas</Title>
-      <ContainerRows>
+      <Title bandera={flag ? true : false}> Caracteristicas </Title>
+      <ContainerRows bandera={flag ? true : false}>
         {/* primercontainer-1 */}
         <InfoContainer>
           <IconContainer>
@@ -79,7 +79,7 @@ export const Caracteristicas = ({ flag }) => {
         </InfoContainer>
       </ContainerRows>
       {/* segundo Container */}
-      <ContainerRows>
+      <ContainerRows bandera={flag ? true : false}>
         {/* segundoContainer-1 */}
         <InfoContainer>
           <IconContainer>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import IphoneResponsive from '../../images/MockupiPhone.png';
 import {
   Section,
@@ -9,26 +9,41 @@ import {
   ContainerInfor,
 } from './styles';
 
-export const Responsive = () => {
+const Responsive = () => {
+
+  const [showAnimation,setShowAnimation] = useState(false);
+
+  useEffect(
+    function(){
+      const onScroll = (e) => {
+        const newShowAnimation = window.scrollY > 2700 && window.scrollY < 3200;
+        showAnimation !== newShowAnimation && setShowAnimation(newShowAnimation);
+      };
+      document.addEventListener('scroll',onScroll);
+      return () => document.removeEventListener('scroll', onScroll);
+    },
+    [showAnimation]
+  );
+
   return (
     <Section>
-      <Container>
+      <Container flag={showAnimation}>
         <img src={IphoneResponsive} alt='iphone' />
-        <ContainerInfor>
+        <ContainerInfor flag={showAnimation} >
           <Title>
             Responsive <br /> Design
           </Title>
           <Parrafo>
-            Adaptamos tu pagina web a todo <br /> tipo de dispositivo. Creando
-            un
-            <br />
-            acceso fluido y dinamico
+            Adaptamos tu página web a todo tipo de dispositivo.<br />
+            Creando un acceso fluido y dinámico.
           </Parrafo>
           <a href='#contacto'>
-            <Button>Contactanos</Button>
+            <Button flag={showAnimation}>Contáctanos</Button>
           </a>
         </ContainerInfor>
       </Container>
     </Section>
   );
 };
+
+export default Responsive;

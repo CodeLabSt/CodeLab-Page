@@ -1,4 +1,9 @@
-import styled, { css } from 'styled-components';
+import styled, { css , keyframes} from 'styled-components';
+import {fadeIn,zoomInDown,slideInUp} from 'react-animations';
+
+const ZommIn = keyframes`${zoomInDown}`;
+const Bounce = keyframes`${fadeIn}`;
+const Hinge = keyframes`${slideInUp}`;
 
 export const Icon = styled.img`
   width: 70px;
@@ -33,6 +38,11 @@ export const Title = styled.h1`
   background-size: 75% 8px;
   position: relative;
   top: -30px;
+  ${(props) =>
+    props.bandera
+    && css`
+        animation:1s ${Hinge};
+      `}
 `;
 
 export const ContainerRows = styled.div`
@@ -41,10 +51,15 @@ export const ContainerRows = styled.div`
   align-items: center;
   justify-content: space-around;
   width: 100%;
-  height: 38%;
+  height: 40%;
   flex-wrap: wrap;
   position: relative;
   top: -2px;
+  ${(props) =>
+    props.bandera
+    && css`
+          animation:1s ${ZommIn};
+      `}
 `;
 
 export const IconContainer = styled.div`
@@ -76,7 +91,7 @@ export const InfoParrafo = styled.p`
 `;
 
 export const InfoTitle = styled.h3`
-  font-size: 30px;
+  font-size: 25px;
   color: black;
-  margin: 2px 0;
+  margin: 10px 0;
 `;

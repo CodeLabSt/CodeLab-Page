@@ -5,11 +5,11 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyles = createGlobalStyle`
 
     h1, h2, h3{
-        font-family: 'Source Sans Pro', sans-serif;
+        font-family: 'Open Sans', sans-serif;
     }
 
     html{
-        font-family: 'Source Sans Pro', sans-serif;
+        font-family: 'Montserrat', sans-serif;
     }
 
     body {

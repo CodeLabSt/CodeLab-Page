@@ -1,4 +1,9 @@
-import styled from 'styled-components';
+import styled,{keyframes,css} from 'styled-components';
+import {flash , zoomInUp,zoomInRight} from 'react-animations';
+
+const ZommInUp = keyframes`${zoomInUp}`;
+const ZoomInRight = keyframes`${zoomInRight}`;
+const Flash = keyframes`${flash}`;
 
 export const Section = styled.section`
   width: 100%;
@@ -20,19 +25,26 @@ export const Container = styled.div`
   height: 100%;
   /* background: red; */
   margin: 0;
+  & img{
+    ${(props) => 
+    props.flag &&
+    css`
+      animation:1s ${ZommInUp};
+    `}
+  }
 `;
 
 export const Title = styled.h1`
   color: black;
-  font-size: 80px;
+  font-size: 65px;
   margin: 0;
-  line-height: 85px;
+  line-height: 65px;
 `;
 
 export const Parrafo = styled.p`
   color: black;
-  font-size: 25px;
-  margin: 15px 0;
+  font-size: 22px;
+  margin: 20px 0;
 `;
 
 export const Button = styled.button`
@@ -47,6 +59,11 @@ export const Button = styled.button`
   font-size: 20px;
   letter-spacing: 0.5px;
   cursor: pointer;
+  ${(props) => 
+    props.flag &&
+    css`
+      animation:2s ${Flash};
+    `}
 `;
 
 export const ContainerInfor = styled.div`
@@ -55,4 +72,9 @@ export const ContainerInfor = styled.div`
   height: 75%;
   position: relative;
   right: 120px;
+  ${(props) => 
+    props.flag &&
+    css`
+      animation:1s ${ZoomInRight};
+    `}
 `;

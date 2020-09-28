@@ -38,7 +38,7 @@ export const FirtsContainer = styled.div`
   margin: 0;
   /* background: blue; */
   width: 100%;
-  height: 20%;
+  height: 25%;
 `;
 
 export const SecondContainer = styled.div`
@@ -51,19 +51,23 @@ export const SecondContainer = styled.div`
   margin: 0;
   /* background: green; */
   width: 100%;
-  height: 80%;
+  height: 75%;
 `;
 
 export const Title = styled.h1`
   color: black;
   font-size: 70px;
-  margin: 5px 0;
+  margin:0;
   background: linear-gradient(to right, #3fff7c, #3ffbe0) bottom no-repeat;
   background-size: 75% 8px;
+  position:Relative;
+  top:20px
 `;
 
 export const InfoParrafo = styled.p`
-  font-size: 22px;
-  margin: 10px 0;
+  font-size: 25px;
+  margin: 5px 0;
   color: black;
+  position:Relative;
+  top:25px
 `;

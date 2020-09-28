@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 import Tablet from '../../images/MockupTablet.png';
 import Flecha from '../../images/Flecha.png';
 import {
@@ -14,26 +14,39 @@ import {
 } from './styles';
 import { CaracteristicasDiseño } from '../ExtendsCaracDiseño/index.js';
 
-export const DiseñoGrafico = () => {
+const DiseñoGrafico = () => {
   const [click, setClick] = useState(false);
+  const [showAnimation,setShowAnimation] = useState(false);
+
+  useEffect(
+    function(){
+      const onScroll = (e) => {
+        const newShowAnimation = window.scrollY > 2000 && window.scrollY < 2700;
+        showAnimation !== newShowAnimation && setShowAnimation(newShowAnimation);
+      };
+      document.addEventListener('scroll',onScroll);
+      return () => document.removeEventListener('scroll', onScroll);
+    },
+    [showAnimation]
+  );
 
   return (
     <>
-      <Section>
+      <Section id='diseño-grafico'>
         <Container>
-          <InfoContainer>
+          <InfoContainer flag={showAnimation}>
             <Title>
               Diseño <br /> Grafico
             </Title>
             <TextParr>
-              Modernizamos tu marca <br /> en todos los ambitos. Creamos <br />
+              Modernizamos tu marca <br /> en todos los ámbitos. Creamos <br />
               diseños frescos y minimalistas.
             </TextParr>
             <a href='#contacto'>
               <Button>Aprender mas</Button>
             </a>
           </InfoContainer>
-          <ImgTablet src={Tablet} alt='tablet' />
+          <ImgTablet flag={showAnimation} src={Tablet} alt='tablet' />
         </Container>
         <FlechaContainer onClick={() => setClick(!click)}>
           <ImgFlecha flag={click} src={Flecha} alt='flecha' />
@@ -43,3 +56,5 @@ export const DiseñoGrafico = () => {
     </>
   );
 };
+
+export default DiseñoGrafico;

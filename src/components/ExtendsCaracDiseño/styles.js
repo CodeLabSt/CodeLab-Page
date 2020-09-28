@@ -1,4 +1,9 @@
-import styled, { css } from 'styled-components';
+import styled, { css,keyframes } from 'styled-components';
+import {fadeIn,zoomInDown,slideInDown} from 'react-animations';
+
+const ZommIn = keyframes`${zoomInDown}`;
+const Bounce = keyframes`${fadeIn}`;
+const SlideInDown = keyframes`${slideInDown}`;
 
 export const Section = styled.section`
   width: 100%;
@@ -28,6 +33,11 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
+  ${(props) =>
+    props.bandera
+    && css`
+        animation:1s ${ZommIn};
+      `}
 `;
 
 export const Img = styled.img`
@@ -44,6 +54,11 @@ export const Title = styled.h1`
   background-size: 75% 8px;
   /* position: relative;
   top: -30px; */
+  ${(props) =>
+    props.bandera
+    && css`
+        animation:1s ${SlideInDown};
+      `}
 `;
 
 export const IconContainer = styled.div`
@@ -69,8 +84,8 @@ export const InfoContainer = styled.div`
 `;
 
 export const Subtitle = styled.h3`
-  font-size: 30px;
-  margin: 2px 0;
+  font-size: 25px;
+  margin: 10px 0;
   color: black;
 `;
 

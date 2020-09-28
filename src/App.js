@@ -1,26 +1,15 @@
 import React from 'react';
-import { Introduciendo } from './components/Introduciendo/index.js';
-import { Nosotros } from './components/Nosotros/index.js';
-import { Servicios } from './components/Servicios/index.js';
+import { Route,BrowserRouter,Switch } from 'react-router-dom';
 import { GlobalStyles } from './styles/GlobalStyles';
-import { DiseñoGrafico } from './components/DiseñoGrafico/index.js';
-import { Responsive } from './components/Responsive/index.js';
-import { Contacto } from './components/Contacto/index.js';
-import { Footer } from './components/Footer/index.js';
-import { Portafolio } from './components/Portafolio/index.js';
+import  Home  from './pages/Home.js';
 
 export const App = () => {
   return (
-    <>
+    <BrowserRouter>
       <GlobalStyles />
-      <Introduciendo />
-      <Nosotros />
-      <Servicios />
-      <DiseñoGrafico />
-      <Responsive />
-      <Portafolio />
-      <Contacto />
-      <Footer />
-    </>
+      <Switch>
+        <Route exact path='/' component={Home} />
+      </Switch>
+    </BrowserRouter>
   );
 };

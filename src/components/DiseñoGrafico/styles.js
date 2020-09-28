@@ -1,4 +1,8 @@
-import styled, { css } from 'styled-components';
+import styled, { css , keyframes} from 'styled-components';
+import {slideInLeft,zoomInRight} from 'react-animations';
+
+const SlideInLeft = keyframes`${slideInLeft}`;
+const ZommInR = keyframes`${zoomInRight}`;
 
 export const Section = styled.section`
   display: flex;
@@ -23,7 +27,7 @@ export const FlechaContainer = styled.div`
   top: -25px;
   z-index: 1;
   cursor: pointer;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 `;
 
 export const ImgFlecha = styled.img`
@@ -54,14 +58,14 @@ export const Container = styled.div`
 
 export const Title = styled.h1`
   color: black;
-  font-size: 90px;
+  font-size: 65px;
   margin: 0;
-  line-height: 80px;
+  line-height: 65px;
 `;
 
 export const TextParr = styled.p`
   color: black;
-  font-size: 28px;
+  font-size: 22px;
   margin: 20px 0;
 `;
 
@@ -80,6 +84,11 @@ export const Button = styled.button`
 export const ImgTablet = styled.img`
   height: 80%;
   width: 45%;
+    ${(props) => 
+    props.flag &&
+    css`
+      animation:1s ${ZommInR};
+    `}
 `;
 
 export const InfoContainer = styled.div`
@@ -93,4 +102,9 @@ export const InfoContainer = styled.div`
   position: relative;
   top: 15px;
   left: 60px;
+  ${(props) => 
+    props.flag &&
+    css`
+      animation:1s ${SlideInLeft};
+    `}
 `;

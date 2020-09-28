@@ -1,4 +1,9 @@
-import styled from 'styled-components';
+import styled,{keyframes,css} from 'styled-components';
+import {zoomInRight,fadeInRightBig,fadeInLeft} from 'react-animations';
+
+const ZommIn = keyframes`${zoomInRight}`;
+const LightSpeedIn = keyframes`${fadeInRightBig}`;
+const FadeInLeft = keyframes`${fadeInLeft}`;
 
 export const Section = styled.section`
   width: 100%;
@@ -35,7 +40,11 @@ export const ContainerInfo = styled.div`
   align-items: center;
   justify-content: center;
   margin: 0;
-  /* background: green; */
+  ${(props) => 
+    props.flag &&
+    css`
+      animation:1s ${FadeInLeft};
+    `}
 `;
 
 export const Formulario = styled.form`
@@ -61,6 +70,11 @@ export const Input = styled.input`
   width: 45%;
   height: 50px;
   color: black;
+  ${(props) => 
+    props.flag &&
+    css`
+      animation: 1s ${LightSpeedIn};
+    `}
 `;
 
 export const TextBox = styled.textarea`
@@ -68,14 +82,20 @@ export const TextBox = styled.textarea`
   /* border: 2px solid black; */
   font-family: 'Source Sans Pro', sans-serif;
   border-radius: 10px;
-  font-size: 19px;
+  font-size: 20px;
   border: none;
+  /* font-weight:bold; */
   /* margin-bottom: 20px; */
   padding: 10px 20px;
   outline: none;
   width: 100%;
   height: 30%;
   color: black;
+  ${(props) => 
+    props.flag &&
+    css`
+      animation: 1s ${LightSpeedIn};
+    `}
   & ::placeholder {
     color: black;
   }
@@ -86,12 +106,17 @@ export const Button = styled.button`
   height: 50px;
   color: white;
   border: none;
-  border-radius: 25px;
+  border-radius: 10px;
   background: linear-gradient(to right, #3fff7c, #3ffbe0);
-  font-size: 25px;
-  letter-spacing: 0.5px;
+  font-size: 22px;
+  /* letter-spacing: 0.5px; */
   cursor: pointer;
   position: relative;
   /* left: 830px; */
   top: -15px;
+  ${(props) => 
+    props.flag &&
+    css`
+      animation:1s ${ZommIn};
+    `}
 `;

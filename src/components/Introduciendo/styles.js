@@ -1,5 +1,12 @@
-import styled from 'styled-components';
+import styled, { keyframes , css } from 'styled-components';
 import img from '../../images/DegradadoInicio.jpg';
+import {slideInLeft,zoomInDown,flash,fadeInUpBig,slideInRight} from 'react-animations';
+
+const SlideInLeft = keyframes`${slideInLeft}`;
+const ZoomInDown = keyframes`${zoomInDown}`;
+const Flash = keyframes`${flash}`;
+const FadeInUpBig = keyframes`${fadeInUpBig}`;
+const SlideInRight = keyframes`${slideInRight}`;
 
 export const Section = styled.section`
   display: flex;
@@ -35,22 +42,31 @@ export const Img = styled.img`
   height: 200px;
   margin: 0;
   position: relative;
-  right: 110px;
-  /* margin-right: 150px; */
+  right: 80px;
+  ${(props) => 
+    props.flag &&
+    css`
+      animation: 1s ${SlideInLeft};
+    `}
 `;
 export const Menu = styled.nav`
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 45%;
+  width: 50%;
   height: 100%;
   color: white;
   flex-wrap: wrap;
-  position: relative;
-  left: 75px;
+  /* position: relative;
+  left: 75px; */
+  ${(props) => 
+    props.flag &&
+    css`
+      animation:1s ${SlideInRight};
+    `}
   & > a {
-    font-size: 23px;
+    font-size: 20px;
     color: white;
     text-decoration: none;
     cursor: pointer;
@@ -64,11 +80,16 @@ export const Title = styled.h1`
   color: white;
   margin: 0;
   font-size: 90px;
-  /* font-weight: bolder; */
+  font-weight: bold;
   line-height: 80px;
   /* margin-left: 90px; */
   position: relative;
   left: 40px;
+  ${(props) => 
+    props.flag &&
+    css`
+      animation: 1s ${FadeInUpBig};
+    `}
 `;
 
 export const Parrafo = styled.p`
@@ -76,8 +97,13 @@ export const Parrafo = styled.p`
   color: white;
   position: relative;
   left: 40px;
-  font-size: 30px;
+  font-size: 25px;
   margin: 12px 0;
+  ${(props) => 
+    props.flag &&
+    css`
+      animation: 2s ${FadeInUpBig};
+    `}
 `;
 
 export const Button = styled.button`
@@ -95,6 +121,11 @@ export const Button = styled.button`
   cursor: pointer;
   margin: 15px 0;
   outline: none;
+  ${(props) => 
+    props.flag &&
+    css`
+      animation: 2s ${Flash};
+    `}
 `;
 
 export const SecondContainer = styled.div`
@@ -103,4 +134,10 @@ export const SecondContainer = styled.div`
   margin: 0;
   position: relative;
   top: 160px;
+  animation: 1s ${ZoomInDown};
+  ${(props) => 
+    props.flag &&
+    css`
+      animation: 2s ${ZoomInDown};
+    `}
 `;
