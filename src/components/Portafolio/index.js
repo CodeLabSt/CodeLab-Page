@@ -1,37 +1,92 @@
-import React from 'react';
+import React , { useState , useEffect } from 'react';
 import Flecha from '../../images/Flecha.png';
 import {
   Section,
-  FlechaContainer,
+  FlechaContainerRight,
+  FlechaContainerLeft,
   FirtsContainer,
   SecondContainer,
   Title,
   InfoParrafo,
+  Slider,
+  ContainerImages,
+  ImgFlechaLeft,
+  ImgFlechaRight
 } from './styles';
-import Easybank from '../../images/Captures Paginas/Easybank1.png';
-import EasyFooter from '../../images/Captures Paginas/Easybank2.png';
-import Shorty from '../../images/Captures Paginas/shorty.png';
 
-const Portafolio = () => {
+import Cap1 from '../../images/CapturesPaginas/Cap1.png'
+import Cap2 from '../../images/CapturesPaginas/Cap2.png'
+import Cap3 from '../../images/CapturesPaginas/Cap3.png'
+import Cap4 from '../../images/CapturesPaginas/Cap4.png'
+import Cap5 from '../../images/CapturesPaginas/Cap5.png'
+
+export const Portafolio = () => {
+
+  const [focus,setFocus] = useState(0);
+  const [showAnimation,setShowAnimation] = useState(false);
+
+  const images = [
+    Cap1,
+    Cap2,
+    Cap3,
+    Cap4,
+    Cap5,
+  ]
+
+  const tabLeft = () => {
+    if((Math.abs(focus - 100)) < (images.length * 100)){
+      document.getElementById('slider').style.transform = `translateX(${focus - 100}%)`
+      setFocus(focus - 100)
+    }
+  }
+
+  const tabRight = () => {
+    if((focus + 100) <= 0){
+      document.getElementById('slider').style.transform = `translateX(${focus + 100}%)`
+      setFocus(focus + 100)
+    }
+  }
+
+  useEffect(
+    function(){
+      const onScroll = (e) => {
+        const newShowAnimation = window.scrollY > 3200 && window.scrollY < 4100;
+        showAnimation !== newShowAnimation && setShowAnimation(newShowAnimation);
+      };
+      document.addEventListener('scroll',onScroll);
+      return () => document.removeEventListener('scroll', onScroll);
+    },
+    [showAnimation]
+  );
+
   return (
     <Section id='portafolio'>
-      <FirtsContainer>
-        <Title>Portafolio</Title>
-        <InfoParrafo>
-          Nuestro portafolio habla por nosotros, nuestro compromiso
-          <br />
-          es crear proyectos de alta calidad.
-        </InfoParrafo>
-      </FirtsContainer>
-      <SecondContainer>
-        <FlechaContainer>
-          <img width='50px' height='50px' src={Flecha} />
-        </FlechaContainer>
-        <div></div>
-        <FlechaContainer>
-          <img width='50px' height='50px' src={Flecha} />
-        </FlechaContainer>
-      </SecondContainer>
+        <FirtsContainer flag={showAnimation}>
+          <Title>Portafolio</Title>
+        </FirtsContainer>
+        <FlechaContainerRight onClick={tabRight} flag={showAnimation}>
+          <ImgFlechaLeft 
+            src={Flecha} 
+          />
+        </FlechaContainerRight>
+        <FlechaContainerLeft onClick={tabLeft} flag={showAnimation}>        
+          <ImgFlechaRight 
+            src={Flecha} 
+          />
+        </FlechaContainerLeft>
+      <ContainerImages flag={showAnimation} id='slider'>
+          {
+            images.map(img => <img 
+                                  key={images.indexOf(img)}
+                                  src={img} 
+                                  style={{
+                                    width: '100%',
+                                    minWidth: '100%',
+                                    height: '100%'
+                                  }}
+                                />)
+          }
+      </ContainerImages>
     </Section>
   );
 };

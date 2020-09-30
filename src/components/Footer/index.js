@@ -44,13 +44,13 @@ export const Footer = () => {
           codelab.webdesign@gmail.com
         </ContactInfo>
         <ContainerImages>
-          <a href="https://www.facebook.com/codelab.studio">
+          <a href="https://www.facebook.com/codelab.studio" target="_blank">
             <FaFacebook />
           </a>
-          <a href="https://www.instagram.com/codelab.studio/">
+          <a href="https://www.instagram.com/codelab.studio/" target="_blank">
             <FaInstagram />
           </a>
-          <a href="https://github.com/CodeLabSt">
+          <a href="https://github.com/CodeLabSt" target="_blank">
             <FaGithub />
           </a>
         </ContainerImages>

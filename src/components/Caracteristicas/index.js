@@ -21,7 +21,7 @@ import {
 export const Caracteristicas = ({ flag }) => {
   return (
     <SectionC bandera={flag ? true : false}>
-      <Title bandera={flag ? true : false}> Caracteristicas </Title>
+      <Title bandera={flag ? true : false}> Características </Title>
       <ContainerRows bandera={flag ? true : false}>
         {/* primercontainer-1 */}
         <InfoContainer>
@@ -29,10 +29,10 @@ export const Caracteristicas = ({ flag }) => {
             <Icon src={IconPWeb} alt='icon' />
           </IconContainer>
           <InfoTitle>
-            Pagina Web <br /> Tradicional
+            Página  Web <br /> Tradicional
           </InfoTitle>
           <InfoParrafo>
-            Creamos la pagina ideal <br /> para tu emprendimiento <br /> nuevo o
+            Creamos la página ideal <br /> para tu emprendimiento <br /> nuevo o
             para tu uso <br /> personal.
           </InfoParrafo>
         </InfoContainer>
@@ -42,10 +42,10 @@ export const Caracteristicas = ({ flag }) => {
             <Icon src={IconLaptop} alt='icon' />
           </IconContainer>
           <InfoTitle>
-            Pagina Web <br /> Profesional
+            Página Web <br /> Profesional
           </InfoTitle>
           <InfoParrafo>
-            Diseñamos una pagina <br /> web a la talla de tu <br /> marca.Con
+            Diseñamos una página <br /> web a la talla de tu <br /> marca. Con
             diseño <br /> personalizado a tu medida.
           </InfoParrafo>
         </InfoContainer>
@@ -58,8 +58,8 @@ export const Caracteristicas = ({ flag }) => {
             Tienda <br /> Online
           </InfoTitle>
           <InfoParrafo>
-            Creamos la Tienda <br /> Onlinea a la medida <br /> para tu negocio,
-            con carrito <br /> y metodos de pago online.
+            Creamos la Tienda <br /> Online a la medida <br /> para tu negocio,
+            con carrito <br /> y métodos de pago online.
           </InfoParrafo>
         </InfoContainer>
         {/* primercontainer-4 */}
@@ -86,10 +86,10 @@ export const Caracteristicas = ({ flag }) => {
             <Icon src={IconPayment} alt='icon' />
           </IconContainer>
           <InfoTitle>
-            Metodos <br /> de Pago
+             Métodos  <br /> de Pago
           </InfoTitle>
           <InfoParrafo>
-            Creamos paginas web <br /> con acceso al banco <br /> de tu
+            Creamos páginas web <br /> con acceso al banco <br /> de tu
             preferencia, ideal
             <br /> para tu e-commerce.
           </InfoParrafo>
@@ -100,12 +100,12 @@ export const Caracteristicas = ({ flag }) => {
             <Icon src={IconIdiomas} alt='icon' />
           </IconContainer>
           <InfoTitle>
-            Multiples <br /> Idiomas
+             Múltiples  <br /> Idiomas
           </InfoTitle>
           <InfoParrafo>
             Adaptamos tu <br /> plataforma al idioma <br /> que desees, somos
             una
-            <br /> plataforma multilingue.
+            <br /> plataforma multilingüe.
           </InfoParrafo>
         </InfoContainer>
         {/* segundoContainer-3 */}
@@ -114,11 +114,11 @@ export const Caracteristicas = ({ flag }) => {
             <Icon src={IconVideo} alt='icon' />
           </IconContainer>
           <InfoTitle>
-            Tecnologia <br /> Multimedia
+            Tecnología  <br /> Multimedia
           </InfoTitle>
           <InfoParrafo>
-            Creamos una experiencia unica <br /> para tu sitio web. <br />
-            Con capacidad de incluir <br /> audios, videos, podcasts y mas.
+            Creamos una experiencia única <br /> para tu sitio web. <br />
+            Con capacidad de incluir <br /> audios, videos, podcasts y más.
           </InfoParrafo>
         </InfoContainer>
         {/* segundoContainer-4 */}
@@ -129,7 +129,7 @@ export const Caracteristicas = ({ flag }) => {
           <InfoTitle>Formularios</InfoTitle>
           <InfoParrafo>
             Incluimos formularios <br /> de contacto que facilitan <br /> la
-            comunicacion con tus <br /> clientes.
+            comunicación con tus <br /> clientes.
           </InfoParrafo>
         </InfoContainer>
       </ContainerRows>

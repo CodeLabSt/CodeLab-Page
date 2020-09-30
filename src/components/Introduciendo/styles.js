@@ -78,6 +78,7 @@ export const Menu = styled.nav`
 
 export const Title = styled.h1`
   color: white;
+  font-family: 'Open Sans', sans-serif;
   margin: 0;
   font-size: 90px;
   font-weight: bold;

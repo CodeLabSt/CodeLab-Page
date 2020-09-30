@@ -16,7 +16,7 @@ import {
 export const CaracteristicasDiseño = ({ flag }) => {
   return (
     <Section bandera={flag ? true : false}>
-      <Title bandera={flag ? true : false}>Caractetisticas</Title>
+      <Title bandera={flag ? true : false}>Características</Title>
       <Container bandera={flag ? true : false}>
         {/* Primero */}
         <InfoContainer>
@@ -29,10 +29,10 @@ export const CaracteristicasDiseño = ({ flag }) => {
           </Subtitle>
           <InfoParrafo>
             Diseñamos logos
-            <br /> memorables y unicos,
+            <br /> memorables y únicos,
             <br /> que representaran a tu
             <br />
-            marca de la mejor manera
+            marca de la mejor manera.
           </InfoParrafo>
         </InfoContainer>
         {/* Segundo */}
@@ -47,11 +47,11 @@ export const CaracteristicasDiseño = ({ flag }) => {
           <InfoParrafo>
             Creamos diseños para todo
             <br />
-            tipo de marcas,desde
+            tipo de marcas, desde
             <br />
             banners, tarjetas de
             <br />
-            presentacion, flyers y mas.
+            presentación, flyers y más.
           </InfoParrafo>
         </InfoContainer>
         {/* Tercero */}
@@ -64,7 +64,7 @@ export const CaracteristicasDiseño = ({ flag }) => {
             Redes Sociales
           </Subtitle>
           <InfoParrafo>
-            Gestionamos la direccion de arte <br /> ideal para tu marca, creando
+            Gestionamos la dirección de arte <br /> ideal para tu marca, creando
             <br />
             contenido que la impulsara
             <br />

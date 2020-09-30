@@ -57,13 +57,13 @@ const Nosotros = () => {
             </Description>
           </InfoContainer>
           <ContainerImg flag={showAnimation}>
-            <a href="https://www.instagram.com/miguelvilllamizar/">
+            <a href="https://www.instagram.com/miguelvilllamizar/" target="_blank">
               <FaInstagram/>
             </a>
             <a>
               <FaBehance />
             </a>
-            <a href="https://wa.link/r3y8sf">
+            <a href="https://wa.link/r3y8sf" target="_blank">
               <FaWhatsapp />
             </a>
           </ContainerImg>
@@ -81,13 +81,13 @@ const Nosotros = () => {
             </Description>
           </InfoContainer>
           <ContainerImg flag={showAnimation}>
-            <a href="https://www.instagram.com/pablo.m58/">
+            <a href="https://www.instagram.com/pablo.m58/" target="_blank">
               <FaInstagram />
             </a>
-            <a href="https://github.com/pablom58">
+            <a href="https://github.com/pablom58" target="_blank">
               <FaGithub />
             </a>
-            <a href="https://wa.link/l12mfa">
+            <a href="https://wa.link/l12mfa" target="_blank">
               <FaWhatsapp />
             </a>
           </ContainerImg>
@@ -105,13 +105,13 @@ const Nosotros = () => {
             </Description>
           </InfoContainer>
           <ContainerImg flag={showAnimation}>
-            <a href="https://www.instagram.com/jorgelvillamizar/">
+            <a href="https://www.instagram.com/jorgelvillamizar/" target="_blank">
               <FaInstagram />
             </a>
-            <a href="https://github.com/Jorgevillamizar10">
+            <a href="https://github.com/Jorgevillamizar10" target="_blank">
               <FaGithub />
             </a>
-            <a href="https://wa.link/8f9uud">
+            <a href="https://wa.link/8f9uud" target="_blank">
               <FaWhatsapp />
             </a>
           </ContainerImg>

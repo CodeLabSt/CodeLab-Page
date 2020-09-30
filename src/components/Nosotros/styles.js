@@ -68,7 +68,7 @@ export const ContainerImg = styled.div`
   height: 20%;
   flex-wrap: wrap;
   position: relative;
-  top: 40px;
+  top: 15px;
   & > a {
     text-decoration:none;
     width: 50px;
@@ -99,12 +99,16 @@ export const Title = styled.h2`
   font-size: 45px;
   margin-top: 0;
   border-bottom: green;
+  position:relative;
+  top: -55px;
 `;
 
 export const Description = styled.p`
   color: white;
   font-size: 25px;
   margin: 10px 0;
+  position:relative;
+  top: -50px;
 `;
 
 export const InfoContainer = styled.div`
