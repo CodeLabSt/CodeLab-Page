@@ -10,9 +10,17 @@ import {
   Button,
 } from './styles';
 
+import { ENTRYPOINT } from '../../config/entrypoint'
+
 const Contacto = () => {
 
   const [showAnimation,setShowAnimation] = useState(false);
+
+  const [data,setData] = useState({
+    from: '',
+    subject: '',
+    message: ''
+  })
 
   useEffect(
     function(){
@@ -26,6 +34,34 @@ const Contacto = () => {
     [showAnimation]
   );
 
+  const handleSubmit = form => {
+    form.preventDefault()
+    fetch(`${ENTRYPOINT}/email`,{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+      .then(response => response.json())
+      .then(response => {
+        console.log(response)
+        setData({
+          from: '',
+          subject: '',
+          message: ''
+        })
+      })
+      .catch(error => console.error(error))
+  }
+
+  const handleChange = input => {
+    setData({
+      ...data,
+      [input.target.name]: input.target.value
+    })
+  }
+
   return (
     <Section id='contacto'>
       <ContainerInfo flag={showAnimation}>
@@ -35,10 +71,10 @@ const Contacto = () => {
           <br /> información de nuestros paquetes y servicios.
         </Parr>
       </ContainerInfo>
-      <Formulario>
-        <Input flag={showAnimation} type='text' placeholder='Nombre' />
-        <Input flag={showAnimation} type='text' placeholder='Correo electrónico' />
-        <TextBox flag={showAnimation} type='text' placeholder='Describe tu proyecto' />
+      <Formulario onSubmit={handleSubmit} >
+        <Input flag={showAnimation} type='text' value={data.subject} name='subject' onChange={handleChange} placeholder='Asunto' />
+        <Input flag={showAnimation} type='text' value={data.from} name='from' onChange={handleChange} placeholder='Correo electrónico' />
+        <TextBox flag={showAnimation} type='text' value={data.message} name='message' onChange={handleChange} placeholder='Describe tu proyecto' />
         <Button flag={showAnimation}>Enviar</Button>
       </Formulario>
     </Section>
