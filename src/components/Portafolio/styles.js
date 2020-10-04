@@ -148,6 +148,7 @@ export const ContainerImages = styled.div`
   position:relative;
   transition:all 500ms ease-in-out;
   top:-40px;
+  overflow: hidden;
   ${(props) => 
     props.flag &&
     css`

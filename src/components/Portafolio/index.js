@@ -34,15 +34,23 @@ export const Portafolio = () => {
   ]
 
   const tabLeft = () => {
+    let images = document.getElementById('slider').querySelectorAll('img')
     if((Math.abs(focus - 100)) < (images.length * 100)){
-      document.getElementById('slider').style.transform = `translateX(${focus - 100}%)`
+      images.forEach(img => {
+        img.style.transform = `translateX(${focus - 100}%)`
+      })
+      // document.getElementById('slider').style.transform = `translateX(${focus - 100}%)`
       setFocus(focus - 100)
     }
   }
 
   const tabRight = () => {
+    let images = document.getElementById('slider').querySelectorAll('img')
     if((focus + 100) <= 0){
-      document.getElementById('slider').style.transform = `translateX(${focus + 100}%)`
+      images.forEach(img => {
+        img.style.transform = `translateX(${focus + 100}%)`
+      })
+      // document.getElementById('slider').style.transform = `translateX(${focus + 100}%)`
       setFocus(focus + 100)
     }
   }
@@ -82,7 +90,8 @@ export const Portafolio = () => {
                                   style={{
                                     width: '100%',
                                     minWidth: '100%',
-                                    height: '100%'
+                                    height: '100%',
+                                    transition: 'all 500ms ease-in-out'
                                   }}
                                 />)
           }
