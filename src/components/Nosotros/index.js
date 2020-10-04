@@ -21,17 +21,21 @@ const Nosotros = () => {
 
   const [showAnimation,setShowAnimation] = useState(false);
 
-  useEffect(
-    function(){
-      const onScroll = (e) => {
-        const newShowAnimation = window.scrollY > 695 && window.scrollY < 1200;
-        showAnimation !== newShowAnimation && setShowAnimation(newShowAnimation);
-      };
-      document.addEventListener('scroll',onScroll);
-      return () => document.removeEventListener('scroll', onScroll);
-    },
-    [showAnimation]
-  );
+  useEffect(() => {
+    const onScroll = (e) => {
+        console.log(`ancho: ${window.outerWidth}`);
+        console.log(`alto: ${window.scrollY}`);
+        if(window.outerWidth < 450 && window.scrollY > 256 && window.scrollY < 1443){
+          setShowAnimation(true);
+        }else if(window.outerWidth > 460 && window.outerWidth < 850 && window.scrollY > 533 && window.scrollY < 1529){
+          setShowAnimation(true);
+        }else if(window.outerWidth > 870  && window.scrollY > 592 && window.scrollY < 1242){
+          setShowAnimation(true);
+        }
+    };
+    document.addEventListener('scroll',onScroll);
+    return () => document.removeEventListener('scroll', onScroll);
+},[]);
     
   return (
     <Section id='nosotros'>
@@ -60,7 +64,7 @@ const Nosotros = () => {
             <a href="https://www.instagram.com/miguelvilllamizar/" target="_blank">
               <FaInstagram/>
             </a>
-            <a>
+            <a href="https://www.behance.net/jorgemigue796a?tracking_source=search_users_recommended%7Cmiguel%20villamizar" target="_blank">
               <FaBehance />
             </a>
             <a href="https://wa.link/r3y8sf" target="_blank">

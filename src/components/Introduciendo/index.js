@@ -11,30 +11,30 @@ import {
   SecondContainer,
 } from './styles';
 import Logo from '../../images/LogoBlancoPng.png';
+import { NavBar } from '../NavbarMobile/index';
 
 const Introduciendo = () => {
 
   const [showAnimation,setShowAnimation] = useState(false);
-
-  useEffect(
-    function(){
+  
+  useEffect(() => {
       const onScroll = (e) => {
-        const newShowAnimation = window.scrollY < 280;
-        showAnimation !== newShowAnimation && setShowAnimation(newShowAnimation);
+          const newShowAnimation = window.scrollY < 439;
+          showAnimation !== newShowAnimation && setShowAnimation(newShowAnimation);
       };
       document.addEventListener('scroll',onScroll);
       return () => document.removeEventListener('scroll', onScroll);
-    },
-    [showAnimation]
-  );
+  },[]);
 
   return (
     <Section id='inicio'>
-      <Container flag={showAnimation}>
+      <Container>
         <Header>
-          <Img src={Logo} alt='logo' flag={showAnimation} />
+          <Img src={Logo} alt='logo' />
 
-          <Menu flag={showAnimation}>
+          <NavBar />
+
+          <Menu>
             <a href='#inicio'>Inicio</a>
             <a href='#nosotros'>Nosotros</a>
             <a href='#servicios'>Servicios</a>
@@ -43,19 +43,19 @@ const Introduciendo = () => {
           </Menu>
         </Header>
         <SecondContainer>
-          <Title flag={showAnimation} >
+          <Title >
             <strong>
               Introduciendo <br /> CodeLab
               <br />
               tu alternativa visionaria.
             </strong>
           </Title>
-          <Parrafo flag={showAnimation} >
-            Nuestra misión es crear proyectos memorables que <br /> impulsen a
+          <Parrafo >
+            Nuestra misión es crear proyectos memorables <br /> que impulsen a
             tu marca en el mundo digital.
           </Parrafo>
           <a href='#contacto'>
-            <Button flag={showAnimation} >Contáctanos</Button>
+            <Button >Contáctanos</Button>
           </a>
         </SecondContainer>
       </Container>

@@ -13,17 +13,19 @@ const Responsive = () => {
 
   const [showAnimation,setShowAnimation] = useState(false);
 
-  useEffect(
-    function(){
-      const onScroll = (e) => {
-        const newShowAnimation = window.scrollY > 2700 && window.scrollY < 3200;
-        showAnimation !== newShowAnimation && setShowAnimation(newShowAnimation);
-      };
-      document.addEventListener('scroll',onScroll);
-      return () => document.removeEventListener('scroll', onScroll);
-    },
-    [showAnimation]
-  );
+  useEffect(() => {
+    const onScroll = (e) => {
+      if(window.outerWidth < 450 && window.scrollY > 3029 && window.scrollY < 3500){
+        setShowAnimation(true);
+      }else if(window.outerWidth > 460 && window.outerWidth < 850 && window.scrollY > 3761 && window.scrollY < 4400){
+        setShowAnimation(true);
+      }else if(window.outerWidth > 860  && window.scrollY > 2830 && window.scrollY < 3192){
+        setShowAnimation(true);
+      }
+    };
+    document.addEventListener('scroll',onScroll);
+    return () => document.removeEventListener('scroll', onScroll);
+},[]);
 
   return (
     <Section>

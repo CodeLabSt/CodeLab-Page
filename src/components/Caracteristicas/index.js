@@ -117,7 +117,7 @@ export const Caracteristicas = ({ flag }) => {
             Tecnología  <br /> Multimedia
           </InfoTitle>
           <InfoParrafo>
-            Creamos una experiencia única <br /> para tu sitio web. <br />
+            Creamos una experiencia<br /> única para tu sitio web. <br />
             Con capacidad de incluir <br /> audios, videos, podcasts y más.
           </InfoParrafo>
         </InfoContainer>

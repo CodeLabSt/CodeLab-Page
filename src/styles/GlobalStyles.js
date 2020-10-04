@@ -18,7 +18,7 @@ export const GlobalStyles = createGlobalStyle`
         padding:0;
         width: 100%;
         overflow-x:hidden;
-        /* background:blue; */
+        background:transparent;
         /* overscroll-behavior: none; */
     }
 

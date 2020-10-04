@@ -34,11 +34,11 @@ export const FlechaContainerRight = styled.div`
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
   left: 130px;
   top: 55%;
-  ${(props) => 
+  /* ${(props) => 
     props.flag &&
     css`
       animation:1s ${ZoomInRight};
-    `}
+    `} */
 `;
 
 export const FlechaContainerLeft = styled.div`
@@ -57,11 +57,11 @@ export const FlechaContainerLeft = styled.div`
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
   left: 85%;
   top: 55%;
-  ${(props) => 
+  /* ${(props) => 
     props.flag &&
     css`
       animation:1s ${ZoomInLeft};
-    `}
+    `} */
 `;
 
 export const ImgFlechaLeft = styled.img`
@@ -90,11 +90,11 @@ export const FirtsContainer = styled.div`
   height: 10%;
   position:relative;
   top:-15px;
-  ${(props) => 
+  /* ${(props) => 
     props.flag &&
     css`
       animation:1s ${FadeInLeft};
-    `}
+    `} */
 `;
 
 export const Title = styled.h1`
@@ -148,11 +148,11 @@ export const ContainerImages = styled.div`
   position:relative;
   transition:all 500ms ease-in-out;
   top:-40px;
-  ${(props) => 
+  /* ${(props) => 
     props.flag &&
     css`
       animation:1s ${FadeInRight};
-    `}
+    `} */
 `;
 
 

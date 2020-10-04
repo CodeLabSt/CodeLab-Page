@@ -18,17 +18,19 @@ const DiseñoGrafico = () => {
   const [click, setClick] = useState(false);
   const [showAnimation,setShowAnimation] = useState(false);
 
-  useEffect(
-    function(){
-      const onScroll = (e) => {
-        const newShowAnimation = window.scrollY > 2000 && window.scrollY < 2700;
-        showAnimation !== newShowAnimation && setShowAnimation(newShowAnimation);
-      };
-      document.addEventListener('scroll',onScroll);
-      return () => document.removeEventListener('scroll', onScroll);
-    },
-    [showAnimation]
-  );
+  useEffect(() => {
+    const onScroll = (e) => {
+      if(window.outerWidth < 450 && window.scrollY > 2341 && window.scrollY < 2905){
+        setShowAnimation(true);
+      }else if(window.outerWidth > 460 && window.outerWidth < 850 && window.scrollY > 2841 && window.scrollY < 3548){
+        setShowAnimation(true);
+      }else if(window.outerWidth > 860  && window.scrollY > 2138 && window.scrollY < 2619){
+        setShowAnimation(true);
+      }
+    };
+    document.addEventListener('scroll',onScroll);
+    return () => document.removeEventListener('scroll', onScroll);
+},[]);
 
   return (
     <>
@@ -36,10 +38,10 @@ const DiseñoGrafico = () => {
         <Container>
           <InfoContainer flag={showAnimation}>
             <Title>
-              Diseño <br /> Grafico
+              Diseño <br /> Gráfico 
             </Title>
             <TextParr>
-              Modernizamos tu marca <br /> en todos los ámbitos. Creamos <br />
+              Modernizamos tu marca <br /> en todos los ámbitos.<br /> Creamos 
               diseños frescos y minimalistas.
             </TextParr>
             <a href='#contacto'>

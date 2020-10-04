@@ -13,6 +13,21 @@ export const Section = styled.section`
   width: 100%;
   height: 700px;
   /* background: green; */
+  @media(max-width:890px){
+    height:570px;
+  }
+  @media(max-width:750px){
+    height:520px;
+  }
+  @media(max-width:580px){
+    height:450px;
+  }
+  @media(max-width:510px){
+    height:330px;
+  }
+  @media(max-width:450px){
+    height:270px;
+  }
 `;
 
 export const Container = styled.div`
@@ -35,6 +50,12 @@ export const Header = styled.header`
   align-items: center;
   justify-content: space-around;
   background: transparent;
+  @media(max-width:950px){
+    /* background:green; */
+    height:200px;
+    flex-direction:column;
+    justify-content:center;
+  }
 `;
 
 export const Img = styled.img`
@@ -43,11 +64,21 @@ export const Img = styled.img`
   margin: 0;
   position: relative;
   right: 80px;
-  ${(props) => 
-    props.flag &&
-    css`
-      animation: 1s ${SlideInLeft};
-    `}
+  animation: 1s ${SlideInLeft};
+
+  @media(max-width:1100px){
+    right: 50px;
+  }
+  @media(max-width:950px){
+    right: 0px;
+    top:-40px;
+    width: 200px;
+    height: 200px;
+  }
+  @media(max-width:580px){
+    display:none;
+  }
+
 `;
 export const Menu = styled.nav`
   margin: 0;
@@ -58,13 +89,8 @@ export const Menu = styled.nav`
   height: 100%;
   color: white;
   flex-wrap: wrap;
-  /* position: relative;
-  left: 75px; */
-  ${(props) => 
-    props.flag &&
-    css`
-      animation:1s ${SlideInRight};
-    `}
+  animation:1s ${SlideInRight};
+
   & > a {
     font-size: 20px;
     color: white;
@@ -73,6 +99,20 @@ export const Menu = styled.nav`
     &:hover {
       color: black;
     }
+    @media(max-width:1100px){
+      font-size: 18px;
+    }
+  }
+  @media(max-width:1100px){
+      width: 55%;
+  }
+  @media(max-width:950px){
+      width: 80%;
+      position:relative;
+      top:-80px;
+  }
+  @media(max-width:580px){
+    display:none;
   }
 `;
 
@@ -86,11 +126,42 @@ export const Title = styled.h1`
   /* margin-left: 90px; */
   position: relative;
   left: 40px;
-  ${(props) => 
-    props.flag &&
-    css`
-      animation: 1s ${FadeInUpBig};
-    `}
+  animation: 1s ${FadeInUpBig};
+
+  @media(max-width:1100px){
+    font-size:75px;
+    top:70px;
+    line-height: 70px;
+    top:0;
+  }
+  @media(max-width:920px){
+    font-size:60px;
+    line-height: 55px;
+  }
+  @media(max-width:750px){
+    font-size:50px;
+    line-height: 45px;
+  }
+  @media(max-width:630px){
+    font-size:45px;
+    line-height: 40px;
+  }
+  @media(max-width:510px){
+    font-size:35px;
+    line-height: 30px;
+  }
+  @media(max-width:450px){
+    font-size:28px;
+    line-height: 25px;
+  }
+  @media(max-width:340px){
+    font-size:26px;
+    line-height: 22px;
+  }
+  @media(max-width:290px){
+    font-size:22px;
+    line-height: 18px;
+  }
 `;
 
 export const Parrafo = styled.p`
@@ -100,11 +171,25 @@ export const Parrafo = styled.p`
   left: 40px;
   font-size: 25px;
   margin: 12px 0;
-  ${(props) => 
-    props.flag &&
-    css`
-      animation: 2s ${FadeInUpBig};
-    `}
+  animation: 2s ${FadeInUpBig};
+  @media(max-width:1100px){
+      font-size: 20px;
+      margin: 20px 0;
+    }
+  @media(max-width:890px){
+    font-size:18px;
+  }
+  @media(max-width:510px){
+    font-size:16px;
+    margin:10px 0;
+  }
+  @media(max-width:450px){
+    font-size:14px;
+    margin:5px 0;
+  }
+  @media(max-width:340px){
+    font-size:12px;
+  }
 `;
 
 export const Button = styled.button`
@@ -122,11 +207,27 @@ export const Button = styled.button`
   cursor: pointer;
   margin: 15px 0;
   outline: none;
-  ${(props) => 
-    props.flag &&
-    css`
-      animation: 2s ${Flash};
-    `}
+  animation: 2s ${Flash};
+    @media(max-width:1100px){
+      font-size: 18px;
+      width:130px;
+      height:40px;
+      margin:0;
+    }
+    @media(max-width:750px){
+    font-size: 17px;
+    letter-spacing:1px;
+  }
+  @media(max-width:510px){
+    font-size:14px;
+    width:110px;
+    height:35px;
+  }
+  @media(max-width:450px){
+    width:95px;
+    height:28px;
+    letter-spacing:0px;
+  }
 `;
 
 export const SecondContainer = styled.div`
@@ -136,9 +237,25 @@ export const SecondContainer = styled.div`
   position: relative;
   top: 160px;
   animation: 1s ${ZoomInDown};
-  ${(props) => 
-    props.flag &&
-    css`
-      animation: 2s ${ZoomInDown};
-    `}
+    @media(max-width:1100px){
+      top:230px;
+    }
+  @media(max-width:950px){
+      top:90px;
+  }
+  @media(max-width:890px){
+    top:30px;
+  }
+  @media(max-width:580px){
+    top:-50px;
+    right:20px;
+  }
+  @media(max-width:510px){
+    right:20px;
+  }
+  @media(max-width:450px){
+    right:35px;
+    margin:3px;
+    top:-15px;
+  }
 `;

@@ -21,17 +21,19 @@ const Servicios = () => {
   const [click, setClick] = useState(false);
   const [showAnimation,setShowAnimation] = useState(false);
 
-  useEffect(
-    function(){
-      const onScroll = (e) => {
-        const newShowAnimation = window.scrollY > 1200 && window.scrollY < 2000;
-        showAnimation !== newShowAnimation && setShowAnimation(newShowAnimation);
-      };
-      document.addEventListener('scroll',onScroll);
-      return () => document.removeEventListener('scroll', onScroll);
-    },
-    [showAnimation]
-  );
+  useEffect(() => {
+    const onScroll = (e) => {
+      if(window.outerWidth < 450 && window.scrollY > 1422 && window.scrollY < 2200){
+        setShowAnimation(true);
+      }else if(window.outerWidth > 460 && window.outerWidth < 850 && window.scrollY > 1501 && window.scrollY < 2700){
+        setShowAnimation(true);
+      }else if(window.outerWidth > 860  && window.scrollY > 1287 && window.scrollY < 2000){
+        setShowAnimation(true);
+      }
+    };
+    document.addEventListener('scroll',onScroll);
+    return () => document.removeEventListener('scroll', onScroll);
+},[]);
 
   return (
     <>
@@ -39,12 +41,12 @@ const Servicios = () => {
         <FirtsContainer flag={showAnimation}>
           <Title>Servicios</Title>
           <Parraf>
-            Te brindamos Asesoramiento detallado sobre los paquetes <br />y
+            Te brindamos asesoramiento detallado sobre los paquetes <br />y
             servicios que ofrecemos.
           </Parraf>
         </FirtsContainer>
         <SecondContainer>
-          <ImgLaptop  flag={showAnimation} src={Laptop} alt='laptop' />
+          <ImgLaptop  src={Laptop} alt='laptop' />
           <InfoContainer flag={showAnimation}>
             <Subtitle>
               Desarrollo y <br />

@@ -14,25 +14,22 @@ const Contacto = () => {
 
   const [showAnimation,setShowAnimation] = useState(false);
 
-  useEffect(
-    function(){
-      const onScroll = (e) => {
+  useEffect(() => {
+    const onScroll = (e) => {
         const newShowAnimation = window.scrollY > 4100 && window.scrollY < 4850;
         showAnimation !== newShowAnimation && setShowAnimation(newShowAnimation);
-      };
-      document.addEventListener('scroll',onScroll);
-      return () => document.removeEventListener('scroll', onScroll);
-    },
-    [showAnimation]
-  );
+    };
+    document.addEventListener('scroll',onScroll);
+    return () => document.removeEventListener('scroll', onScroll);
+},[]);
 
   return (
     <Section id='contacto'>
       <ContainerInfo flag={showAnimation}>
         <Title>Contacto</Title>
         <Parr>
-          Ingresa tus datos y te haremos llegar toda la
-          <br /> información de nuestros paquetes y servicios.
+          Ingresa tus datos y te haremos llegar toda <br /> la
+           información de nuestros paquetes y servicios.
         </Parr>
       </ContainerInfo>
       <Formulario>

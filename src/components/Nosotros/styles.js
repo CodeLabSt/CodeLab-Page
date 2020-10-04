@@ -16,6 +16,18 @@ export const Section = styled.section`
   justify-content: center;
   width: 100%;
   height: 750px;
+  @media(max-width:1170px){
+    height:1100px;
+  }
+  @media(max-width:780px){
+    height:1500px;
+  }
+  @media(max-width:450px){
+    height:1300px;
+  }
+  @media(max-width:280px){
+    height:1150px;
+  }
 `;
 
 export const FirtsContainer = styled.div`
@@ -27,6 +39,16 @@ export const FirtsContainer = styled.div`
   text-align:center;
   width: 100%;
   height: 30%;
+  @media(max-width:1170px){
+    height:20%;
+  }
+  @media(max-width:780px){
+    height:15%;
+  }
+  @media(max-width:450px){
+    position:relative;
+    top:-60px;
+  }
 `;
 
 export const SecondContainer = styled.div`
@@ -35,8 +57,21 @@ export const SecondContainer = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  /* flex-wrap:wrap; */
   width: 90%;
   height: 70%;
+  /* background:red; */
+  @media(max-width:1170px){
+    height:80%;
+  }
+  @media(max-width:780px){
+    height:85%;
+  }
+  @media(max-width:450px){
+    height:75%;
+    position:relative;
+    top:-70px;
+  }
 `;
 
 export const Presentacion = styled.div`
@@ -45,8 +80,8 @@ export const Presentacion = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  width: 28%;
-  height: 75%;
+  width: 320px;
+  height: 380px;
   margin: 0 15px;
   /* border-radius: 10px; */
   ${(props) =>
@@ -57,6 +92,35 @@ export const Presentacion = styled.div`
       background-size: 100% 100%;
       background-repeat: no-repeat;
     `}
+  @media(max-width:1170px){
+    margin:20px 15px;
+  }
+  @media(max-width:780px){
+    width: 340px;
+    height: 370px;
+    border-radius:5px;
+  }
+  @media(max-width:680px){
+    margin:20px 8px;
+    position:relative;
+    top:-40px;
+  }
+  @media(max-width:580px){
+    width: 315px;
+    height: 320px;
+    top:0px;
+  }
+  @media(max-width:450px){
+    width: 290px;
+    height: 310px;
+  }
+  @media(max-width:400px){
+    width: 280px;
+  }
+  @media(max-width:280px){
+    height:270px;
+    top:35px;
+  }
 `;
 
 export const ContainerImg = styled.div`
@@ -81,8 +145,22 @@ export const ContainerImg = styled.div`
     height: 50px;
       &:hover {
       color: #3fff7c;
+      }
+      @media(max-width:450px){
+        width: 40px;
+        height: 40px;
+      }
+      @media(max-width:400px){
+        width: 35px;
+        height: 35px;
+      }
     }
-    }
+  }
+  @media(max-width:450px){
+      top:20px;
+  }
+  @media(max-width:400px){
+    top:40px;
   }
   ${(props) => 
     props.flag &&
@@ -101,6 +179,19 @@ export const Title = styled.h2`
   border-bottom: green;
   position:relative;
   top: -55px;
+  @media(max-width:450px){
+    top:-20;
+    font-size: 38px;
+    line-height:34px;
+  }
+  @media(max-width:400px){
+    font-size: 32px;
+    line-height:30px;
+  }
+  @media(max-width:280px){
+    font-size: 28px;
+    line-height:26px;
+  }
 `;
 
 export const Description = styled.p`
@@ -109,6 +200,17 @@ export const Description = styled.p`
   margin: 10px 0;
   position:relative;
   top: -50px;
+  @media(max-width:450px){
+    top:-15;
+    font-size: 20px;
+  }
+  @media(max-width:400px){
+    top:-35px;
+    font-size: 18px;
+  }
+  @media(max-width:280px){
+    font-size: 16px;
+  }
 `;
 
 export const InfoContainer = styled.div`
@@ -147,6 +249,26 @@ export const FirtsTitle = styled.h1`
     css`
       animation: 1s ${SlideInLeft};
     `}
+  @media(max-width:850px){
+    font-size:60px;
+  }
+  @media(max-width:680px){
+    font-size:50px;
+    top:-20px;
+    background-size: 75% 6px;
+  }
+  @media(max-width:580px){
+    font-size:45px;
+    top:0px;
+  }
+  @media(max-width:450px){
+    font-size:40px;
+    background-size: 75% 4px;
+  }
+  @media(max-width:410px){
+    font-size:35px;
+    background-size: 75% 2px;
+  }
 `;
 
 export const ParafNosot = styled.p`
@@ -155,4 +277,24 @@ export const ParafNosot = styled.p`
   margin: 10px 0;
   position: relative;
   top:30px;
+  @media(max-width:850px){
+      font-size:20px;
+    }
+  @media(max-width:680px){
+    font-size:18px;
+    top:-15px;
+  }
+  @media(max-width:580px){
+    margin:10px 12px;
+    top:0px;
+  }
+  @media(max-width:450px){
+    font-size:16px;
+    margin:10px 15px;
+  }
+  @media(max-width:280px){
+    font-size: 14px;
+    margin:10px 5px;
+  }
 `;
+

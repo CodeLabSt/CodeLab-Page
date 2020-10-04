@@ -7,6 +7,7 @@ import {
   Anchor,
   ContactInfo,
   ContainerImages,
+  MediumContainer
 } from './styles';
 import { GiSmartphone } from 'react-icons/gi';
 import { AiOutlineMail } from 'react-icons/ai';
@@ -27,11 +28,11 @@ export const Footer = () => {
         </Parrafo>
       </Container>
       {/* Segundo Container */}
-      <Container>
+      <MediumContainer>
         <Title>Nuestros Servicios</Title>
         <Anchor href='#servicios'>Diseño Web</Anchor>
         <Anchor href='#diseño-grafico'>Diseño Grafico</Anchor>
-      </Container>
+      </MediumContainer>
       {/* Tercer Container */}
       <Container>
         <Title>Contacto</Title>
@@ -41,7 +42,9 @@ export const Footer = () => {
         </ContactInfo>
         <ContactInfo>
           <AiOutlineMail />
-          codelab.webdesign@gmail.com
+          <a href="mailto:codelab.webdesign@gmail.com?subject=Solicito mas información sobre la oportunidad de negocio. &body=Hola! te contacto desde tu pagina web y quiero saber mas sobre paquetes y servicios." target="_blank">
+            codelab.webdesign@gmail.com
+          </a>
         </ContactInfo>
         <ContainerImages>
           <a href="https://www.facebook.com/codelab.studio" target="_blank">
