@@ -146,7 +146,7 @@ export const Title = styled.h1`
     font-size:45px;
     line-height: 40px;
   }
-  @media(max-width:510px){
+  @media(max-width:560px){
     font-size:35px;
     line-height: 30px;
   }

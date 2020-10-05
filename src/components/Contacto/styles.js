@@ -137,6 +137,9 @@ export const TextBox = styled.textarea`
     font-size: 17px;
     margin:5px 0;
   }
+  @media(max-width:390px){
+    width:85%;
+  }
 `;
 
 export const Button = styled.button`

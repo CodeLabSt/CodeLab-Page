@@ -250,7 +250,10 @@ export const ContainerImages = styled.div`
   @media(max-width:500px){
     height:65%;
   }
-  @media(max-width:400px){
+  @media(max-width:450px){
+    height:60%;
+  }
+  @media(max-width:420px){
     height:53%;
     top:-30px;
   }

@@ -96,6 +96,7 @@ export const LogoModal = styled.img`
     @media(max-width:290px){
         height:110px;
         width:110px;
+        margin-left:5px;
     }
 `;
 

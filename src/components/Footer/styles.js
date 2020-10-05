@@ -94,7 +94,7 @@ export const Title = styled.h2`
 export const Parrafo = styled.p`
   font-size: 18px;
   margin: 5px 0;
-  @media(max-width:330px){
+  @media(max-width:336px){
     font-size:16px;
   }
   @media(max-width:300px){
