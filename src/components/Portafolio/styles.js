@@ -49,6 +49,7 @@ export const FlechaContainerRight = styled.div`
   @media(max-width:920px){
     background: rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    top:55%;
   }
   @media(max-width:800px){
     left:10%;
@@ -91,6 +92,7 @@ export const FlechaContainerLeft = styled.div`
   @media(max-width:920px){
     background: rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    top:55%;
   }
   @media(max-width:800px){
     left:85%;
@@ -232,20 +234,28 @@ export const ContainerImages = styled.div`
     height:70%;
   }
   @media(max-width:1030px){
-    height:73%;
+    height:65%;
   }
   @media(max-width:920px){
     width:100%;
-    height:85%;
+    height:80%;
     top:0;
   }
-  @media(max-width:450px){
-    height:80%;
+  @media(max-width:700px){
+    height:83%;
   }
-  @media(max-width:340px){
-    height:70%;
+  @media(max-width:600px){
+    height:76%;
   }
-  @media(max-width:300px){
+  @media(max-width:500px){
     height:65%;
+  }
+  @media(max-width:400px){
+    height:53%;
+    top:-30px;
+  }
+  @media(max-width:330px){
+    height:48%;
+    top:-45px;
   }
 `;

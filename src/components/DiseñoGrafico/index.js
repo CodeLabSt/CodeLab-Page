@@ -22,6 +22,8 @@ const DiseñoGrafico = () => {
     const onScroll = (e) => {
       if(window.outerWidth < 450 && window.scrollY > 2341 && window.scrollY < 2905){
         setShowAnimation(true);
+      }else if(window.outerWidth < 400 && window.scrollY > 2103 && window.scrollY < 2532){
+        setShowAnimation(true);
       }else if(window.outerWidth > 460 && window.outerWidth < 850 && window.scrollY > 2841 && window.scrollY < 3548){
         setShowAnimation(true);
       }else if(window.outerWidth > 860  && window.scrollY > 2138 && window.scrollY < 2619){

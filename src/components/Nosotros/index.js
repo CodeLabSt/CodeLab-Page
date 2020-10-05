@@ -25,6 +25,8 @@ const Nosotros = () => {
     const onScroll = (e) => {
         if(window.outerWidth < 450 && window.scrollY > 256 && window.scrollY < 1400){
           setShowAnimation(true);
+        }else if(window.outerWidth < 400 && window.scrollY > 139 && window.scrollY < 1156){
+          setShowAnimation(true);
         }else if(window.outerWidth > 460 && window.outerWidth < 850 && window.scrollY > 533 && window.scrollY < 1490){
           setShowAnimation(true);
         }else if(window.outerWidth > 870  && window.scrollY > 592 && window.scrollY < 1242){

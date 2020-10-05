@@ -15,7 +15,11 @@ const Responsive = () => {
 
   useEffect(() => {
     const onScroll = (e) => {
+      // console.log(`ancho: ${window.outerWidth}`);
+      // console.log(`alto: ${window.scrollY}`);
       if(window.outerWidth < 450 && window.scrollY > 3029 && window.scrollY < 3300){
+        setShowAnimation(true);
+      }else if(window.outerWidth < 400 && window.scrollY > 2752 && window.scrollY < 3164){
         setShowAnimation(true);
       }else if(window.outerWidth > 460 && window.outerWidth < 850 && window.scrollY > 3761 && window.scrollY < 4400){
         setShowAnimation(true);

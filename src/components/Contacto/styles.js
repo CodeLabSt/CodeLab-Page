@@ -135,7 +135,6 @@ export const TextBox = styled.textarea`
   @media(max-width:450px){
     width:93%;
     font-size: 17px;
-    padding: 10px 15px;
     margin:5px 0;
   }
 `;

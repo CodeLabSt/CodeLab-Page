@@ -23,7 +23,9 @@ const Servicios = () => {
 
   useEffect(() => {
     const onScroll = (e) => {
-      if(window.outerWidth < 450 && window.scrollY > 1422 && window.scrollY < 2200){
+      if(window.outerWidth < 450 && window.outerWidth > 400 && window.scrollY > 1422 && window.scrollY < 2200){
+        setShowAnimation(true);
+      }else if(window.outerWidth < 400 && window.scrollY > 1380 && window.scrollY < 1978){
         setShowAnimation(true);
       }else if(window.outerWidth > 460 && window.outerWidth < 850 && window.scrollY > 1501 && window.scrollY < 2700){
         setShowAnimation(true);
