@@ -1,9 +1,4 @@
-import styled,{keyframes,css} from 'styled-components';
-import {zoomInRight,fadeInRightBig,fadeInLeft} from 'react-animations';
-
-const ZommIn = keyframes`${zoomInRight}`;
-const LightSpeedIn = keyframes`${fadeInRightBig}`;
-const FadeInLeft = keyframes`${fadeInLeft}`;
+import styled,{css} from 'styled-components';
 
 export const Section = styled.section`
   width: 100%;
@@ -49,7 +44,7 @@ export const Title = styled.h1`
 
 export const Parr = styled.p`
   font-size: 25px;
-  margin: 5px 0;
+  margin: 5px 15px;
   color: black;
   @media(max-width:680px){
     font-size:18px;
@@ -73,11 +68,6 @@ export const ContainerInfo = styled.div`
   align-items: center;
   justify-content: center;
   margin: 0;
-  ${(props) => 
-    props.flag &&
-    css`
-      animation:1s ${FadeInLeft};
-    `}
 `;
 
 export const Formulario = styled.form`
@@ -110,11 +100,10 @@ export const Input = styled.input`
   width: 45%;
   height: 50px;
   color: black;
-  ${(props) => 
-    props.flag &&
-    css`
-      animation: 1s ${LightSpeedIn};
-    `}
+  font-weight:bold;
+  &::placeholder{
+    font-weight:bold;
+  }
   @media(max-width:550px){
     width:65%;
     height:40px;
@@ -128,21 +117,16 @@ export const TextBox = styled.textarea`
   font-family: Arial, Helvetica, sans-serif;
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  font-size: 14px;
+  font-size: 18px;
   border: none;
   padding: 10px 20px;
   outline: none;
   width: 100%;
   height: 30%;
-  color: black;
-  ${(props) => 
-    props.flag &&
-    css`
-      animation: 1s ${LightSpeedIn};
-    `}
+  color:black;
+  font-weight:none !important;
   &::placeholder {
-    font-weight:none;
-    color:gray;
+    color: gray;
     font-size:18px;
   }
   @media(max-width:750px){
@@ -170,11 +154,9 @@ export const Button = styled.button`
   position: relative;
   /* left: 830px; */
   top: -15px;
-  ${(props) => 
-    props.flag &&
-    css`
-      animation:1s ${ZommIn};
-    `}
+  &[disabled] {
+    opacity: 0.3;
+  }
   @media(max-width:550px){
     font-size:18px;
     width:140px;

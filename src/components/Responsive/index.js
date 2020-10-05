@@ -15,7 +15,7 @@ const Responsive = () => {
 
   useEffect(() => {
     const onScroll = (e) => {
-      if(window.outerWidth < 450 && window.scrollY > 3029 && window.scrollY < 3500){
+      if(window.outerWidth < 450 && window.scrollY > 3029 && window.scrollY < 3300){
         setShowAnimation(true);
       }else if(window.outerWidth > 460 && window.outerWidth < 850 && window.scrollY > 3761 && window.scrollY < 4400){
         setShowAnimation(true);

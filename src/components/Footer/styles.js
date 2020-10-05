@@ -146,7 +146,8 @@ export const ContactInfo = styled.div`
     }
   }
   & a{
-    text-decoration:none;
+    text-decoration:underline;
+    cursor:pointer;
     color:black;
     &:hover{
     color: #3fff7c;

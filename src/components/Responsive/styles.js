@@ -40,7 +40,7 @@ export const Container = styled.div`
     ${(props) => 
     props.flag &&
     css`
-      animation:1s ${SlideInRight};
+      animation:1s ${SlideInLeft};
     `}
     @media(max-width:620px){
       width:500px;
@@ -159,7 +159,7 @@ export const ContainerInfor = styled.div`
   ${(props) => 
     props.flag &&
     css`
-      animation:1s ${SlideInLeft};
+      animation:1s ${SlideInRight};
     `}
     @media(max-width:1030px){
       display:flex;

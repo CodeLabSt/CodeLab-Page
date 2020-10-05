@@ -126,7 +126,7 @@ export const Title = styled.h1`
   /* margin-left: 90px; */
   position: relative;
   left: 40px;
-  animation: 1s ${FadeInUpBig};
+  animation: 1s ${SlideInLeft};
 
   @media(max-width:1100px){
     font-size:75px;
@@ -171,7 +171,7 @@ export const Parrafo = styled.p`
   left: 40px;
   font-size: 25px;
   margin: 12px 0;
-  animation: 2s ${FadeInUpBig};
+  animation: 2s ${SlideInRight};
   @media(max-width:1100px){
       font-size: 20px;
       margin: 20px 0;

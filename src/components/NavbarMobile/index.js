@@ -5,7 +5,7 @@ import { FaInstagram, FaGithub, FaWhatsapp, } from 'react-icons/fa';
 import { Menu , Modal, LogoModal, ContainerImg, Img, ContainerSociales} from './styles.js';
 import Logo from '../../images/LogoBlancoPng.png';
 
-export const NavBar = () => {
+export const NavBar = ({showAnimation}) => {
 
     const [mobileMenu,setMobileMenu] = useState(false);
     const [expanded,setExpanded] = useState(false);
@@ -13,7 +13,7 @@ export const NavBar = () => {
 
     const handleMobileMenu = () => {
         
-        if(!expanded){
+        if(!expanded && !showAnimation){
             setExpanded(true);
             setMobileMenu(true);
         }else{
@@ -28,6 +28,10 @@ export const NavBar = () => {
         const onScroll = (e) => {
             const newShowModal = window.scrollY > 0;
             showModal !== newShowModal && setShowModal(newShowModal);
+            if(expanded && window.scrollY){
+                setExpanded(false);
+                setMobileMenu(false);
+            }
         };
         document.addEventListener('scroll',onScroll);
         return () => document.removeEventListener('scroll', onScroll);

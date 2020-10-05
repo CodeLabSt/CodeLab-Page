@@ -19,7 +19,7 @@ const Introduciendo = () => {
   
   useEffect(() => {
       const onScroll = (e) => {
-          const newShowAnimation = window.scrollY < 439;
+          const newShowAnimation = window.scrollY > 0;
           showAnimation !== newShowAnimation && setShowAnimation(newShowAnimation);
       };
       document.addEventListener('scroll',onScroll);
@@ -32,7 +32,7 @@ const Introduciendo = () => {
         <Header>
           <Img src={Logo} alt='logo' />
 
-          <NavBar />
+          <NavBar flag={showAnimation} />
 
           <Menu>
             <a href='#inicio'>Inicio</a>

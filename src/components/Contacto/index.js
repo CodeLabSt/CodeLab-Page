@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState} from 'react';
 import {
   Section,
   Title,
@@ -10,33 +10,60 @@ import {
   Button,
 } from './styles';
 
+import { ENTRYPOINT } from '../../config/entrypoint'
+
 const Contacto = () => {
 
-  const [showAnimation,setShowAnimation] = useState(false);
+  const [data,setData] = useState({
+    from: '',
+    subject: '',
+    message: ''
+  });
 
-  useEffect(() => {
-    const onScroll = (e) => {
-        const newShowAnimation = window.scrollY > 4100 && window.scrollY < 4850;
-        showAnimation !== newShowAnimation && setShowAnimation(newShowAnimation);
-    };
-    document.addEventListener('scroll',onScroll);
-    return () => document.removeEventListener('scroll', onScroll);
-},[]);
+  const handleSubmit = form => {
+    form.preventDefault()
+    fetch(`${ENTRYPOINT}/email`,{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+      .then(response => response.json())
+      .then(response => {
+        console.log(response)
+        swal('CodeLab','Mensaje Enviado!','success');
+        setData({
+          from: '',
+          subject: '',
+          message: ''
+        })
+      })
+      .catch(error => swal('CodeLab','Lo siento hubo un error','error'))
+      // console.error(error)
+  }
+
+  const handleChange = input => {
+    setData({
+      ...data,
+      [input.target.name]: input.target.value
+    })
+  }
 
   return (
     <Section id='contacto'>
-      <ContainerInfo flag={showAnimation}>
+      <ContainerInfo>
         <Title>Contacto</Title>
         <Parr>
-          Ingresa tus datos y te haremos llegar toda <br /> la
-           información de nuestros paquetes y servicios.
+          Ingresa tus datos y te haremos llegar toda la
+          información de nuestros paquetes y servicios.
         </Parr>
       </ContainerInfo>
-      <Formulario>
-        <Input flag={showAnimation} type='text' placeholder='Nombre' />
-        <Input flag={showAnimation} type='text' placeholder='Correo electrónico' />
-        <TextBox flag={showAnimation} type='text' placeholder='Describe tu proyecto' />
-        <Button flag={showAnimation}>Enviar</Button>
+      <Formulario onSubmit={handleSubmit} >
+        <Input type='text' value={data.subject} name='subject' onChange={handleChange} placeholder='Asunto' />
+        <Input type='text' value={data.from} name='from' onChange={handleChange} placeholder='Correo electrónico' />
+        <TextBox type='text' value={data.message} name='message' onChange={handleChange} placeholder='Describe tu proyecto' />
+        <Button>Enviar</Button>
       </Formulario>
     </Section>
   );

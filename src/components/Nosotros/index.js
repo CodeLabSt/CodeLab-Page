@@ -23,11 +23,9 @@ const Nosotros = () => {
 
   useEffect(() => {
     const onScroll = (e) => {
-        console.log(`ancho: ${window.outerWidth}`);
-        console.log(`alto: ${window.scrollY}`);
-        if(window.outerWidth < 450 && window.scrollY > 256 && window.scrollY < 1443){
+        if(window.outerWidth < 450 && window.scrollY > 256 && window.scrollY < 1400){
           setShowAnimation(true);
-        }else if(window.outerWidth > 460 && window.outerWidth < 850 && window.scrollY > 533 && window.scrollY < 1529){
+        }else if(window.outerWidth > 460 && window.outerWidth < 850 && window.scrollY > 533 && window.scrollY < 1490){
           setShowAnimation(true);
         }else if(window.outerWidth > 870  && window.scrollY > 592 && window.scrollY < 1242){
           setShowAnimation(true);

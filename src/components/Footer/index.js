@@ -20,7 +20,7 @@ export const Footer = () => {
       <Container>
         <Title>Sobre CodeLab</Title>
         <Parrafo>
-          Sobre una agencia de marketing digital, especializada en el área de Diseño Web y Diseño Gráfico.
+          Somos una agencia de marketing digital, especializada en el área de Diseño Web y Diseño Gráfico.
         </Parrafo>
         <Parrafo>
           Una agencia con ámbito nacional e  <br />
@@ -31,7 +31,7 @@ export const Footer = () => {
       <MediumContainer>
         <Title>Nuestros Servicios</Title>
         <Anchor href='#servicios'>Diseño Web</Anchor>
-        <Anchor href='#diseño-grafico'>Diseño Grafico</Anchor>
+        <Anchor href='#diseño-grafico'>Diseño Gráfico</Anchor>
       </MediumContainer>
       {/* Tercer Container */}
       <Container>
