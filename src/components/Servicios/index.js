@@ -60,7 +60,7 @@ const Servicios = () => {
               está en nuestras manos.
             </SubParrafo>
             <a href='#contacto'>
-              <Button>Aprender mas</Button>
+              <Button>Aprender más</Button>
             </a>
           </InfoContainer>
         </SecondContainer>

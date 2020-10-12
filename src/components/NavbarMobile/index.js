@@ -51,7 +51,7 @@ export const NavBar = ({showAnimation}) => {
                 <a href='#inicio'>Inicio</a>
                 <a href='#nosotros'>Nosotros</a>
                 <a href='#servicios'>Servicios</a>
-                <a href='#portafolio'>Portafolio</a>
+                <a href='#portafolio'>Proyectos</a>
                 <a href='#contacto'>Contacto</a>
                 <ContainerSociales>
                     <a href="https://www.instagram.com/codelab.studio/" target="_blank">

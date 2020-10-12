@@ -94,7 +94,7 @@ export const Title = styled.h2`
 export const Parrafo = styled.p`
   font-size: 18px;
   margin: 5px 0;
-  @media(max-width:336px){
+  @media(max-width:380px){
     font-size:16px;
   }
   @media(max-width:300px){
@@ -132,6 +132,7 @@ export const ContactInfo = styled.div`
   width: 100%;
   height: 20%;
   margin: 0;
+  font-size:16px;
   & > svg {
     width: 40px;
     height: 40px;
@@ -155,6 +156,9 @@ export const ContactInfo = styled.div`
   }
   @media(max-width:1000px){
     justify-content:center;
+  }
+  @media(max-width:300px){
+    font-size:14px;
   }
 `;
 

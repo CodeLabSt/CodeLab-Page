@@ -42,7 +42,7 @@ const Nosotros = () => {
       <FirtsContainer>
         <FirtsTitle flag={showAnimation}>Nosotros</FirtsTitle>
         <ParafNosot >
-          Somos un grupo de tres jóvenes Venezolanos emprendedores,
+          Somos un equipo de personas emprendedores,
           <br />
           creativos y responsables, con una visión al futuro del mundo digital.
         </ParafNosot>

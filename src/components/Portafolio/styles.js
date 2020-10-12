@@ -21,9 +21,12 @@ export const Section = styled.section`
   @media(max-width:550px){
     height:75vh;
   }
-  /* @media(max-width:450px){
-    height:70vh;
-  } */
+  @media(max-width:420px){
+    height:65vh;
+  }
+  @media(max-width:380px){
+    height:50vh;
+  }
 `;
 
 export const FlechaContainerRight = styled.div`
@@ -59,11 +62,12 @@ export const FlechaContainerRight = styled.div`
     width:40px;
   }
   @media(max-width:400px){
-    top:55%;
-    }
-  @media(max-width:300px){
+    top:60%;
     height:30px;
     width:30px;
+  }
+  @media(max-width:300px){
+    top:58%;
   }
 `;
 
@@ -105,11 +109,12 @@ export const FlechaContainerLeft = styled.div`
     width:40px;
   }
   @media(max-width:400px){
-    top:55%;
-  }
-  @media(max-width:300px){
+    top:60%;
     height:30px;
     width:30px;
+  }
+  @media(max-width:300px){
+    top:58%;
   }
 `;
 
@@ -125,7 +130,7 @@ export const ImgFlechaLeft = styled.img`
     height:20px;
     width:20px;
   }
-  @media(max-width:300px){
+  @media(max-width:400px){
     height:15px;
     width:15px;
   }
@@ -144,7 +149,7 @@ export const ImgFlechaRight = styled.img`
     height:20px;
     width:20px;
   }
-  @media(max-width:300px){
+  @media(max-width:400px){
     height:15px;
     width:15px;
   }
@@ -185,10 +190,13 @@ export const Title = styled.h1`
     background-size: 75% 4px;
   }
   @media(max-width:570px){
-    font-size:35px;
+    font-size:40px;
   }
   @media(max-width:460px){
-    font-size:28px;
+    font-size:38px;
+  }
+  @media(max-width:410px){
+    font-size:35px;
     background-size: 75% 2px;
     margin-bottom:5px;
   }
@@ -252,13 +260,18 @@ export const ContainerImages = styled.div`
   }
   @media(max-width:450px){
     height:60%;
+    top:-25px;
   }
   @media(max-width:420px){
-    height:53%;
-    top:-30px;
+    height: 60%;
+    top: -10px;
   }
-  @media(max-width:330px){
-    height:48%;
-    top:-45px;
+  @media(max-width:360px){
+    height: 72%;
+    top: 5px;
+  }
+  @media(max-width:300px){
+    height: 55%;
+    top: -13px;
   }
 `;

@@ -62,7 +62,7 @@ export const Portafolio = () => {
   return (
     <Section id='portafolio'>
         <FirtsContainer>
-          <Title>Portafolio</Title>
+          <Title>Proyectos</Title>
         </FirtsContainer>
         <FlechaContainerRight onClick={tabRight}>
           <ImgFlechaLeft 

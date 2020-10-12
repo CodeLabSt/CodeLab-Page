@@ -256,6 +256,7 @@ export const SecondContainer = styled.div`
   @media(max-width:450px){
     right:35px;
     margin:3px;
-    top:-15px;
+    top:-25px;
+    width:90%;
   }
 `;

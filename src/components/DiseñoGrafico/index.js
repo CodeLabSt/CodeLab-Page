@@ -47,7 +47,7 @@ const DiseñoGrafico = () => {
               diseños frescos y minimalistas.
             </TextParr>
             <a href='#contacto'>
-              <Button>Aprender mas</Button>
+              <Button>Aprender más</Button>
             </a>
           </InfoContainer>
           <ImgTablet flag={showAnimation} src={Tablet} alt='tablet' />
