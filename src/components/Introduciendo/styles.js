@@ -154,13 +154,21 @@ export const Title = styled.h1`
     font-size:28px;
     line-height: 25px;
   }
-  @media(max-width:340px){
+  @media(max-width:370px){
     font-size:26px;
     line-height: 22px;
   }
-  @media(max-width:290px){
+  @media(max-width:322px){
+    font-size:24px;
+    /* line-height: 22px; */
+  }
+  @media(max-width:298px){
     font-size:22px;
     line-height: 18px;
+  }
+  @media(max-width:272px){
+    font-size:20px;
+    line-height: 16px;
   }
 `;
 
@@ -187,8 +195,11 @@ export const Parrafo = styled.p`
     font-size:14px;
     margin:5px 0;
   }
-  @media(max-width:340px){
+  @media(max-width:342px){
     font-size:12px;
+  }
+  @media(max-width:298px){
+    font-size:11px;
   }
 `;
 
@@ -257,6 +268,6 @@ export const SecondContainer = styled.div`
     right:35px;
     margin:3px;
     top:-25px;
-    width:90%;
+    width:95%;
   }
 `;

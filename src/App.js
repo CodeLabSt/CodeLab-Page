@@ -8,7 +8,7 @@ export const App = () => {
     <HashRouter >
       <GlobalStyles />
       <Switch>
-        <Route exact path='/' component={Home} />
+        <Route component={Home} />
       </Switch>
     </HashRouter >
   );
